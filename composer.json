@@ -1,21 +1,24 @@
 {
-    "name": "nopjmp/discord-webhooks",
+    "name": "enterv/discord-webhooks",
     "description": "A simple Discord webhook client library.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Kayla Thompson",
-            "email": "jmp@const.ninja"
+            "name": "EnterV",
+            "email": "kontakt@enterv.pl"
         }
     ],
     "require": {
         "ext-curl": "*",
-        "php": ">=5.4"
+        "php": ">=8.1",
+        "guzzlehttp/psr7": "^2.6",
+        "guzzlehttp/guzzle": "^7.7",
+        "symfony/dotenv": "^6.3"
     },
     "autoload": {
         "psr-4": {
-            "DiscordWebhooks\\": "DiscordWebhooks/"
+            "EnterV\\": "src/EnterV/"
         }
     }
 }
