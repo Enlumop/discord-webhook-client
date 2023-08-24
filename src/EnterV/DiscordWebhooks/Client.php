@@ -14,14 +14,14 @@ class Client
     protected ?string $avatar = null;
     protected string $message;
     protected array $embeds;
-    protected int $tts = 0;
+    protected bool $tts = false;
 
     public function __construct($url)
     {
         $this->url = $url;
     }
 
-    public function tts($tts = 0)
+    public function tts($tts = false)
     {
         $this->tts = $tts;
         return $this;
