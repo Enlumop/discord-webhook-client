@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a3cfbb724be54cbb73a2dd417712f50",
+    "content-hash": "d1cedda7bd3014f43396e21dc4074980",
     "packages": [
+        {
+            "name": "enterv/vo-interfaces",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EnterVPL/VoInterfaces.git",
+                "reference": "8147e70a1ee9cb41a92b6ed5b87d95f4847e0cc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EnterVPL/VoInterfaces/zipball/8147e70a1ee9cb41a92b6ed5b87d95f4847e0cc8",
+                "reference": "8147e70a1ee9cb41a92b6ed5b87d95f4847e0cc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EnterV\\Voi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "EnterV",
+                    "email": "kontakt@enterv.pl"
+                }
+            ],
+            "description": "Simple Value Object interfaces",
+            "support": {
+                "issues": "https://github.com/EnterVPL/VoInterfaces/issues",
+                "source": "https://github.com/EnterVPL/VoInterfaces/tree/0.0.3"
+            },
+            "time": "2023-08-25T11:49:39+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.7.0",
