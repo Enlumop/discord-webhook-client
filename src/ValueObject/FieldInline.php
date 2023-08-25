@@ -6,7 +6,7 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 
 use EnterV\Voi\BoolVoInterface;
 
-class FieldInlne implements BoolVoInterface
+class FieldInline implements BoolVoInterface
 {
     public function __construct(
         protected readonly bool $value,

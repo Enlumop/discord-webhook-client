@@ -20,32 +20,41 @@ class Payload implements PayloadInterface
     public function setUsername(StringVoInterface $username): static
     {
         $this->username = $username;
+
         return $this;
     }
+
     public function setAvatarUrl(StringVoInterface $avatarUrl): static
     {
         $this->avatarUrl = $avatarUrl;
+
         return $this;
     }
+
     public function setMessage(StringVoInterface $message): static
     {
         $this->message = $message;
+
         return $this;
     }
+
     public function setEmbed(GetEmbedInterface $embed): static
     {
         $this->embed = $embed;
+
         return $this;
     }
+
     public function setTts(BoolVoInterface $tts): static
     {
         $this->tts = $tts;
+
         return $this;
     }
 
     public function toArray(): array
     {
-        return[
+        return [
             'username' => $this->username?->value(),
             'avatar_url' => $this->avatarUrl?->value(),
             'content' => $this->message?->value(),
