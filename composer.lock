@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1cedda7bd3014f43396e21dc4074980",
+    "content-hash": "73c1af7f7997118d99f747b83519f4f6",
     "packages": [
         {
             "name": "enterv/vo-interfaces",
@@ -724,7 +724,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-curl": "*",
         "php": ">=8.1"
     },
     "platform-dev": [],

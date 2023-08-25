@@ -1,32 +1,47 @@
 # discord-webhooks
 
-Discord webhooks is a simple client for Discord's webhook API.
-
-### Motivation
-
-While this is probably "yet another" library for Discord's webhook system, I wanted to make my own. Discord doesn't support BitBucket's webhook system and the Slack compatible endpoint doesn't send a message.
+Discord webhooks is a professional client for Discord's webhook API.
 
 ## Getting Started
-
-You can either copy the PHP file directly into your project or _preferable_ just use composer.
-
-#### Composer require command
-`composer require nopjmp/discord-webhooks`
-
+### Requirements
+- PHP >= 8.1
+### Install via composer (not available yet)
+`composer require enterv/discord-webhooks`
 ## Usage
 
-It is fairly easy to use. I'll throw in an example.
+Example:
 
 ```php
-use \DiscordWebhooks\Client;
-use \DiscordWebhooks\Embed;
+<?php
 
-$webhook = new Client('DISCORD_WEBHOOK_URL');
+declare(strict_types=1);
+
+require_once('vendor/autoload.php');
+
+use EnterV\DiscordWebhooks\Embed;
+use EnterV\DiscordWebhooks\Payload;
+use EnterV\DiscordWebhooks\ValueObject\Description;
+use EnterV\DiscordWebhooks\ValueObject\Message;
+use EnterV\DiscordWebhooks\ValueObject\Username;
+use EnterV\DiscordWebhooks\ValueObject\WebhookUrl;
+use EnterV\DiscordWebhooks\WebhookClient;
+use Symfony\Component\Dotenv\Dotenv;
+
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__.'/.env');
+
 $embed = new Embed();
+$embed->setDescription(new Description("This is an embed"));
 
-$embed->description('This is an embed');
+$url = new WebhookUrl($_ENV["WEBHOOK_URL"]);
 
-$webhook->username('Bot')->message('Hello, Human!')->embed($embed)->send();
+$payload = new Payload();
+$payload->setUsername(new Username("Example Webhook Bot"))
+    ->setMessage(new Message("This is a message"))
+    ->setEmbed($embed);
+
+$webhook = new WebhookClient();
+$webhook->send($url, $payload);
 ```
 
 ## License
