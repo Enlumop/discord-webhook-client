@@ -6,7 +6,7 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 
 use EnterV\Voi\StringVoInterface;
 
-class Author implements StringVoInterface
+class ThumbnailUrl implements StringVoInterface
 {
     public function __construct(
         protected readonly string $value,

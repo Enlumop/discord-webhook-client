@@ -29,5 +29,5 @@
         "analyse": "@phpstan",
         "phpstan": "vendor/bin/phpstan analyse src --level 9",
         "cs-fix": "vendor/bin/php-cs-fixer fix src"
-    },
+    }
 }
