@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace EnterV\DiscordWebhooks;
 
 use EnterV\DiscordWebhooks\Interface\Payload\GetPayloadInterface;
@@ -8,9 +10,6 @@ use EnterV\Voi\StringVoInterface;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * Client generates the payload and sends the webhook payload to Discord
- */
 class WebhookClient implements WebhookClientInterface
 {
     /**
