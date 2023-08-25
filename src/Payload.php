@@ -50,7 +50,7 @@ class Payload implements PayloadInterface
             'avatar_url' => $this->avatarUrl?->value(),
             'content' => $this->message?->value(),
             'embeds' => [$this->embed?->toArray()],
-            'tts' => $this->tts?->value() || false,
+            'tts' => $this->tts?->value() ?? false,
         ];
     }
 }

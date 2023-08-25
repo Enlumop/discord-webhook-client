@@ -22,6 +22,7 @@ class Color implements ColorVoInterface, ColorDecodedVoInterface
     public function decoded(): int|float
     {
         $value = $this->value();
-        return is_int($value) ? $value : hexdec($value);
+        $isNumber = is_int($value) || is_float($value);
+        return $isNumber ? $value : hexdec($value);
     }
 }

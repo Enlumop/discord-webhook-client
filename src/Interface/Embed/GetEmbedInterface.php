@@ -6,5 +6,8 @@ namespace EnterV\DiscordWebhooks\Interface\Embed;
 
 interface GetEmbedInterface
 {
+    /**
+     * @return array<string, null|string|int|float|array<mixed>>
+     */
     public function toArray(): array;
 }

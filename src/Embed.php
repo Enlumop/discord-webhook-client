@@ -17,19 +17,19 @@ class Embed implements EmbedInterface
     protected ?FormattedDateTimeVoInterface $timestamp = null;
     protected ?ColorDecodedVoInterface $color = null;
     /**
-     * @var array<string>
+     * @var array<string, string|null>
      */
     protected array $footer = [];
     /**
-     * @var array<string>
+     * @var array<string, string|null>
      */
     protected array $image = [];
     /**
-     * @var array<string>
+     * @var array<string, string|null>
      */
     protected array $thumbnail = [];
     /**
-     * @var array<string>
+     * @var array<string, string|null>
      */
     protected array $author = [];
     /**
@@ -103,6 +103,9 @@ class Embed implements EmbedInterface
         return $this;
     }
 
+    /**
+     * @return array<string, null|string|int|float|array<mixed>>
+     */
     public function toArray(): array
     {
         return [

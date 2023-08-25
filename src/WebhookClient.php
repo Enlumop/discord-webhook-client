@@ -16,13 +16,17 @@ class WebhookClient implements WebhookClientInterface
     /**
      * @param StringVoInterface $url
      * @param GetPayloadInterface $payload
-     * @param array $options Request options to apply to the given
+     * @param array<string, mixed> $options Request options to apply to the given
      *                       request and to the transfer. See \GuzzleHttp\RequestOptions.
      * @return ResponseInterface
      */
     public function send(StringVoInterface $url, GetPayloadInterface $payload, array $options = []): ResponseInterface
     {
         $payloadJson = json_encode($payload->toArray());
+
+        if(!$payloadJson) {
+            throw new \Exception("Unacepted Payload");
+        }
 
         $request = new Request(
             "POST",
