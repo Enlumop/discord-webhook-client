@@ -22,10 +22,12 @@
         }
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.10"
+        "phpstan/phpstan": "^1.10",
+        "friendsofphp/php-cs-fixer": "^3.23"
     },
     "scripts": {
         "analyse": "@phpstan",
-        "phpstan": "vendor/bin/phpstan analyse src --level 9"
-    }
+        "phpstan": "vendor/bin/phpstan analyse src --level 9",
+        "cs-fix": "vendor/bin/php-cs-fixer fix src"
+    },
 }
