@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks;
 
+use EnterV\DiscordWebhooks\Exception\Webhook\FailedSendHookException;
+use EnterV\DiscordWebhooks\Exception\Webhook\InvalidPayloadException;
 use EnterV\DiscordWebhooks\Interface\Payload\GetPayloadInterface;
 use EnterV\DiscordWebhooks\Interface\WebhookClient\WebhookClientInterface;
 use EnterV\Voi\StringVoInterface;
@@ -21,7 +23,7 @@ class WebhookClient implements WebhookClientInterface
         $payloadJson = json_encode($payload->toArray());
 
         if (!$payloadJson) {
-            throw new \Exception('Unacepted Payload');
+            throw new InvalidPayloadException();
         }
 
         $request = new Request(
@@ -39,7 +41,7 @@ class WebhookClient implements WebhookClientInterface
         $content = $response->getBody()->getContents();
 
         if (204 !== $code) {
-            throw new \Exception($code.':'.$content);
+            throw new FailedSendHookException($code.':'.$content);
         }
 
         return $response;

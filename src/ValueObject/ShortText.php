@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks\ValueObject;
 
+use EnterV\DiscordWebhooks\Exception\Vo\TooLongTextException;
 use EnterV\Voi\StringVoInterface;
 
 class ShortText implements StringVoInterface
@@ -11,8 +12,9 @@ class ShortText implements StringVoInterface
     public function __construct(
         protected readonly string $value
     ) {
-        if (255 <= \strlen($value)) {
-            throw new \Exception('Text is too long. Max 255 characters');
+        $maxLen = 255;
+        if ($maxLen <= \strlen($value)) {
+            throw new TooLongTextException("Max {$maxLen} characters");
         }
     }
 

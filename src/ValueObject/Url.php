@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks\ValueObject;
 
+use EnterV\DiscordWebhooks\Exception\Vo\InvalidUrlException;
 use EnterV\Voi\StringVoInterface;
 
 class Url implements StringVoInterface
@@ -12,7 +13,7 @@ class Url implements StringVoInterface
         protected readonly string $value
     ) {
         if (!filter_var($value, FILTER_VALIDATE_URL)) {
-            throw new \Exception('Valid URL');
+            throw new InvalidUrlException();
         }
     }
 
