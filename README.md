@@ -1,3 +1,5 @@
+![Static analysis](https://github.com/EnterVPL/discord-webhooks/workflows/Static%20analysis/badge.svg)
+
 # discord-webhooks
 
 Discord webhooks is a professional client for Discord's webhook API.

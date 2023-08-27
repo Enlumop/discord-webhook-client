@@ -1,0 +1,19 @@
+name: Static analysis
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6 # or alternative dependency management
+      - uses: php-actions/phpstan@v3
+        with:
+          path: src/
+          level: 9
+          php_version: 8.1
