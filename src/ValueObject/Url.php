@@ -6,11 +6,14 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 
 use EnterV\Voi\StringVoInterface;
 
-class Message implements StringVoInterface
+class Url implements StringVoInterface
 {
     public function __construct(
-        protected readonly string $value,
+        protected readonly string $value
     ) {
+        if (!filter_var($value, FILTER_VALIDATE_URL)) {
+            throw new \Exception('Valid URL');
+        }
     }
 
     public function value(): string
