@@ -6,9 +6,12 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 
 use EnterV\DiscordWebhooks\Exception\Vo\TooLongTextException;
 use EnterV\Voi\StringVoInterface;
+use EnterV\Voi\Traits\StringVoConcatTrait;
 
 class ShortText implements StringVoInterface
 {
+    use StringVoConcatTrait;
+
     public function __construct(
         protected readonly string $value
     ) {

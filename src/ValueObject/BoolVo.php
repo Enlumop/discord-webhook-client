@@ -7,7 +7,7 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 use EnterV\Voi\BoolVoInterface;
 use EnterV\Voi\Traits\BoolVoOperationsTrait;
 
-class Tts implements BoolVoInterface
+class BoolVo implements BoolVoInterface
 {
     use BoolVoOperationsTrait;
 

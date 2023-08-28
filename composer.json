@@ -3,6 +3,13 @@
     "description": "Professional Discord webhook client library.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "discord",
+        "webhook",
+        "enterv",
+        "entervpl",
+        "client"
+    ],
     "authors": [
         {
             "name": "EnterV",
@@ -13,7 +20,7 @@
         "php": ">=8.1",
         "guzzlehttp/psr7": "^2.6",
         "guzzlehttp/guzzle": "^7.7",
-        "enterv/vo-interfaces": "^0.0.3"
+        "enterv/vo-interfaces": "^0.0.7"
     },
     "autoload": {
         "psr-4": {
@@ -23,7 +30,8 @@
     "require-dev": {
         "phpstan/phpstan": "^1.10",
         "friendsofphp/php-cs-fixer": "^3.23",
-        "symfony/dotenv": "^6.3"
+        "symfony/dotenv": "^6.3",
+        "symfony/console": "^6.3"
     },
     "scripts": {
         "analyse": "@phpstan",

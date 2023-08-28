@@ -7,7 +7,6 @@ namespace EnterV\DiscordWebhooks\Interface\Embed;
 use EnterV\Voi\BoolVoInterface;
 use EnterV\Voi\ColorDecodedVoInterface;
 use EnterV\Voi\FormattedDateTimeVoInterface;
-use EnterV\Voi\SacralTypeVoInterface;
 use EnterV\Voi\StringVoInterface;
 
 interface SetEmbedInterface
@@ -30,5 +29,5 @@ interface SetEmbedInterface
 
     public function setAuthor(StringVoInterface $name, StringVoInterface $url, StringVoInterface $iconUrl): static;
 
-    public function addField(StringVoInterface $name, SacralTypeVoInterface $value, null|BoolVoInterface $inline = null): static;
+    public function addField(StringVoInterface $name, StringVoInterface $value, null|BoolVoInterface $inline = null): static;
 }

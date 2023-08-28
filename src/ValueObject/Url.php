@@ -6,9 +6,12 @@ namespace EnterV\DiscordWebhooks\ValueObject;
 
 use EnterV\DiscordWebhooks\Exception\Vo\InvalidUrlException;
 use EnterV\Voi\StringVoInterface;
+use EnterV\Voi\Traits\StringVoConcatTrait;
 
 class Url implements StringVoInterface
 {
+    use StringVoConcatTrait;
+
     public function __construct(
         protected readonly string $value
     ) {
