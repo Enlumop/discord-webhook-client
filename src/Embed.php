@@ -4,20 +4,16 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks;
 
+use EnterV\DiscordWebhooks\Interface\Color\ColorInterface;
 use EnterV\DiscordWebhooks\Interface\Embed\EmbedInterface;
-use EnterV\Voi\BoolVoInterface;
-use EnterV\Voi\ColorDecodedVoInterface;
-use EnterV\Voi\FormattedDateTimeVoInterface;
-use EnterV\Voi\SacralTypeVoInterface;
-use EnterV\Voi\StringVoInterface;
 
 class Embed implements EmbedInterface
 {
-    protected ?StringVoInterface $title = null;
-    protected ?StringVoInterface $titleUrl = null;
-    protected ?StringVoInterface $description = null;
-    protected ?FormattedDateTimeVoInterface $timestamp = null;
-    protected ?ColorDecodedVoInterface $color = null;
+    protected ?string $title = null;
+    protected ?string $titleUrl = null;
+    protected ?string $description = null;
+    protected ?\DateTimeInterface $timestamp = null;
+    protected ?ColorInterface $color = null;
 
     /**
      * @var array<string, null|string>
@@ -44,86 +40,86 @@ class Embed implements EmbedInterface
      */
     protected array $fields = [];
 
-    public function setTitle(StringVoInterface $title): static
+    public function setTitle(string $title): static
     {
         $this->title = $title;
 
         return $this;
     }
 
-    public function setTitleUrl(StringVoInterface $url): static
+    public function setTitleUrl(string $url): static
     {
         $this->titleUrl = $url;
 
         return $this;
     }
 
-    public function setDescription(StringVoInterface $description): static
+    public function setDescription(string $description): static
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function setTimestamp(FormattedDateTimeVoInterface $timestamp): static
+    public function setTimestamp(\DateTimeInterface $timestamp): static
     {
         $this->timestamp = $timestamp;
 
         return $this;
     }
 
-    public function setColor(ColorDecodedVoInterface $color): static
+    public function setColor(ColorInterface $color): static
     {
         $this->color = $color;
 
         return $this;
     }
 
-    public function setFooter(StringVoInterface $text, null|StringVoInterface $iconUrl = null): static
+    public function setFooter(string $text, null|string $iconUrl = null): static
     {
         $this->footer = [
-            'text' => $text->value(),
-            'icon_url' => $iconUrl?->value(),
+            'text' => $text,
+            'icon_url' => $iconUrl,
         ];
 
         return $this;
     }
 
-    public function setImage(StringVoInterface $url): static
+    public function setImage(string $url): static
     {
         $this->image = [
-            'url' => $url->value(),
+            'url' => $url,
         ];
 
         return $this;
     }
 
-    public function setThumbnail(StringVoInterface $url): static
+    public function setThumbnail(string $url): static
     {
         $this->thumbnail = [
-            'url' => $url->value(),
+            'url' => $url,
         ];
 
         return $this;
     }
 
-    public function setAuthor(StringVoInterface $name, StringVoInterface $url, StringVoInterface $iconUrl): static
+    public function setAuthor(string $name, string $url, string $iconUrl): static
     {
         $this->author = [
-            'name' => $name->value(),
-            'url' => $url->value(),
-            'icon_url' => $iconUrl->value(),
+            'name' => $name,
+            'url' => $url,
+            'icon_url' => $iconUrl,
         ];
 
         return $this;
     }
 
-    public function addField(StringVoInterface $name, SacralTypeVoInterface $value, null|BoolVoInterface $inline = null): static
+    public function addField(string $name, null|bool|int|float|string $value, bool $inline = false): static
     {
         $this->fields[] = [
-            'name' => $name->value(),
-            'value' => $value->value(),
-            'inline' => $inline?->value() ?? false,
+            'name' => $name,
+            'value' => $value,
+            'inline' => $inline,
         ];
 
         return $this;
@@ -135,15 +131,15 @@ class Embed implements EmbedInterface
     public function toArray(): array
     {
         return [
-            'title' => $this->title?->value(),
+            'title' => $this->title,
             'type' => 'rich',
-            'description' => $this->description?->value(),
-            'url' => $this->titleUrl?->value(),
-            'color' => $this->color?->decoded(),
+            'description' => $this->description,
+            'url' => $this->titleUrl,
+            'color' => $this->color?->toInt(),
             'footer' => $this->footer,
             'image' => $this->image,
             'thumbnail' => $this->thumbnail,
-            'timestamp' => $this->timestamp?->formatted(),
+            'timestamp' => $this->timestamp?->format(\DateTimeInterface::ATOM),
             'author' => $this->author,
             'fields' => $this->fields,
         ];

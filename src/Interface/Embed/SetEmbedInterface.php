@@ -4,30 +4,27 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks\Interface\Embed;
 
-use EnterV\Voi\BoolVoInterface;
-use EnterV\Voi\ColorDecodedVoInterface;
-use EnterV\Voi\FormattedDateTimeVoInterface;
-use EnterV\Voi\StringVoInterface;
+use EnterV\DiscordWebhooks\Interface\Color\ColorInterface;
 
 interface SetEmbedInterface
 {
-    public function setTitle(StringVoInterface $title): static;
+    public function setTitle(string $title): static;
 
-    public function setTitleUrl(StringVoInterface $url): static;
+    public function setTitleUrl(string $url): static;
 
-    public function setDescription(StringVoInterface $description): static;
+    public function setDescription(string $description): static;
 
-    public function setTimestamp(FormattedDateTimeVoInterface $timestamp): static;
+    public function setTimestamp(\DateTimeInterface $timestamp): static;
 
-    public function setColor(ColorDecodedVoInterface $color): static;
+    public function setColor(ColorInterface $color): static;
 
-    public function setFooter(StringVoInterface $text, null|StringVoInterface $iconUrl = null): static;
+    public function setFooter(string $text, null|string $iconUrl = null): static;
 
-    public function setImage(StringVoInterface $url): static;
+    public function setImage(string $url): static;
 
-    public function setThumbnail(StringVoInterface $url): static;
+    public function setThumbnail(string $url): static;
 
-    public function setAuthor(StringVoInterface $name, StringVoInterface $url, StringVoInterface $iconUrl): static;
+    public function setAuthor(string $name, string $url, string $iconUrl): static;
 
-    public function addField(StringVoInterface $name, StringVoInterface $value, null|BoolVoInterface $inline = null): static;
+    public function addField(string $name, null|bool|int|float|string $value, bool $inline = false): static;
 }
