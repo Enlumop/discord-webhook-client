@@ -4,21 +4,19 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks\Builder\Interface;
 
-use EnterV\Voi\BoolVoInterface;
-
 interface GetTextFormattingCombineInterface
 {
-    public function isBold(): BoolVoInterface;
+    public function isBold(): bool;
 
-    public function isItalic(): BoolVoInterface;
+    public function isItalic(): bool;
 
-    public function isUnderline(): BoolVoInterface;
+    public function isUnderline(): bool;
 
-    public function isStrikethrough(): BoolVoInterface;
+    public function isStrikethrough(): bool;
 
-    public function isListElement(): BoolVoInterface;
+    public function isListElement(): bool;
 
-    public function isQuoteBlock(): BoolVoInterface;
+    public function isQuoteBlock(): bool;
 
-    public function isMultilineQuoteBlock(): BoolVoInterface;
+    public function isMultilineQuoteBlock(): bool;
 }

@@ -6,17 +6,10 @@ namespace EnterV\DiscordWebhooks\Builder;
 
 use EnterV\DiscordWebhooks\Builder\Interface\GetTextFormattingCombineInterface;
 use EnterV\DiscordWebhooks\Builder\Interface\MessageBuilderInterface;
-use EnterV\DiscordWebhooks\ValueObject\LongText;
-use EnterV\DiscordWebhooks\ValueObject\ShortText;
-use EnterV\Voi\Helper\BoolVoHelper;
-use EnterV\Voi\Helper\IntegerVoHelper;
-use EnterV\Voi\Helper\StringVoHelper;
-use EnterV\Voi\IntegerVoInterface;
-use EnterV\Voi\StringVoInterface;
 
 class TextMessageBuilder implements MessageBuilderInterface
 {
-    protected StringVoInterface $message;
+    protected string $message = '';
 
     /**
      * @var array<string, string>
@@ -32,18 +25,16 @@ class TextMessageBuilder implements MessageBuilderInterface
     ];
 
     public function __construct(
-        protected bool $autoNewLine = true,
-        bool $isShortText = false
+        protected bool $autoNewLine = true
     ) {
-        $this->message = $this->determinateText($isShortText);
     }
 
-    public function build(): StringVoInterface
+    public function build(): string
     {
         return $this->message;
     }
 
-    public function addText(string|StringVoInterface $text): static
+    public function addText(string $text): static
     {
         $this->concatMessage($text);
 
@@ -62,75 +53,69 @@ class TextMessageBuilder implements MessageBuilderInterface
         return $this;
     }
 
-    public function addBold(string|StringVoInterface $text): static
+    public function addBold(string $text): static
     {
         $this->concatMessage($this->_addBold($text));
 
         return $this;
     }
 
-    public function addItalic(string|StringVoInterface $text): static
+    public function addItalic(string $text): static
     {
         $this->concatMessage($this->_addItalic($text));
 
         return $this;
     }
 
-    public function addUnderline(string|StringVoInterface $text): static
+    public function addUnderline(string $text): static
     {
         $this->concatMessage($this->_addUnderline($text));
 
         return $this;
     }
 
-    public function addStrikethrough(string|StringVoInterface $text): static
+    public function addStrikethrough(string $text): static
     {
         $this->concatMessage($this->_addStrikethrough($text));
 
         return $this;
     }
 
-    public function addList(string|StringVoInterface $text, int|IntegerVoInterface $indentation = 0): static
+    public function addList(string $text, int $indentation = 0): static
     {
         $this->concatMessage($this->_addList($text, $indentation));
 
         return $this;
     }
 
-    public function _addList(string|StringVoInterface $text, int|IntegerVoInterface $indentation = 0): string
+    public function _addList(string $text, int $indentation = 0): string
     {
-        $indentation = IntegerVoHelper::getNumber($indentation);
         $indentationFormat = str_repeat('  ', $indentation);
 
         return $this->addFormat($text, $indentationFormat.'- ');
     }
 
-    public function addCodeBlock(string|StringVoInterface $text): static
+    public function addCodeBlock(string $text): static
     {
         $this->concatMessage($this->_addCodeBlock($text));
 
         return $this;
     }
 
-    public function _addCodeBlock(string|StringVoInterface $text): string
+    public function _addCodeBlock(string $text): string
     {
         return $this->addDoubleFormat($text, '`');
     }
 
-    public function addMultilineCodeBlock(string|StringVoInterface $text, null|string|StringVoInterface $lang = null): static
+    public function addMultilineCodeBlock(string $text, null|string $lang = null): static
     {
         $this->concatMessage($this->_addMultilineCodeBlock($text, $lang));
 
         return $this;
     }
 
-    public function _addMultilineCodeBlock(string|StringVoInterface $text, null|string|StringVoInterface $lang = null): string
+    public function _addMultilineCodeBlock(string $text, null|string $lang = null): string
     {
-        $text = StringVoHelper::getString($text);
-        if (null !== $lang) {
-            $lang = StringVoHelper::getString($lang);
-        }
-
         return <<<CODEBLOCK
 ```{$lang}
 {$text}
@@ -138,35 +123,34 @@ class TextMessageBuilder implements MessageBuilderInterface
 CODEBLOCK;
     }
 
-    public function addQuoteBlock(string|StringVoInterface $text): static
+    public function addQuoteBlock(string $text): static
     {
         $this->concatMessage($this->_addQuoteBlock($text));
 
         return $this;
     }
 
-    public function _addQuoteBlock(string|StringVoInterface $text): string
+    public function _addQuoteBlock(string $text): string
     {
         return $this->addFormat($text, '> ');
     }
 
-    public function addMultilineQuoteBlock(string|StringVoInterface $text): static
+    public function addMultilineQuoteBlock(string $text): static
     {
         $this->concatMessage($this->_addMultilineQuoteBlock($text));
 
         return $this;
     }
 
-    public function _addMultilineQuoteBlock(string|StringVoInterface $text): string
+    public function _addMultilineQuoteBlock(string $text): string
     {
         return $this->addFormat($text, '>>> ');
     }
 
-    public function addCombineTextFormatting(string|StringVoInterface $text, GetTextFormattingCombineInterface $combine): static
+    public function addCombineTextFormatting(string $text, GetTextFormattingCombineInterface $combine): static
     {
-        $text = StringVoHelper::getString($text);
         foreach ($this->formatMethods as $checkMethod => $formatMethod) {
-            if (BoolVoHelper::getBool($combine->{$checkMethod}())) {
+            if ($combine->{$checkMethod}()) {
                 $text = $this->{$formatMethod}($text);
             }
         }
@@ -176,52 +160,41 @@ CODEBLOCK;
         return $this;
     }
 
-    protected function _addBold(string|StringVoInterface $text): string
+    protected function _addBold(string $text): string
     {
         return $this->addDoubleFormat($text, '**');
     }
 
-    protected function _addItalic(string|StringVoInterface $text): string
+    protected function _addItalic(string $text): string
     {
         return $this->addDoubleFormat($text, '*');
     }
 
-    protected function _addUnderline(string|StringVoInterface $text): string
+    protected function _addUnderline(string $text): string
     {
         return $this->addDoubleFormat($text, '__');
     }
 
-    protected function _addStrikethrough(string|StringVoInterface $text): string
+    protected function _addStrikethrough(string $text): string
     {
         return $this->addDoubleFormat($text, '~~');
     }
 
-    protected function concatMessage(string|StringVoInterface $text): void
+    protected function concatMessage(string $text): void
     {
-        $this->message = $this->message->concat($text);
+        $this->message .= $text;
         if ($this->autoNewLine) {
-            $this->message = $this->message->concat("\n");
+            $this->message .= "\n";
         }
     }
 
-    protected function addFormat(string|StringVoInterface $text, string $format): string
+    protected function addFormat(string $text, string $format): string
     {
-        $text = StringVoHelper::getString($text);
-
         return $format.$text;
     }
 
-    protected function addDoubleFormat(string|StringVoInterface $text, string $format): string
+    protected function addDoubleFormat(string $text, string $format): string
     {
         return $this->addFormat($text, $format).$format;
-    }
-
-    protected function determinateText(bool $isShortText): StringVoInterface
-    {
-        if (!$isShortText) {
-            return new LongText('');
-        }
-
-        return $this->message = new ShortText('');
     }
 }
