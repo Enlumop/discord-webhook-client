@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace EnterV\DiscordWebhooks\Builder;
 
 use EnterV\DiscordWebhooks\Builder\Interface\TextFormattingCombineInterface;
-use EnterV\DiscordWebhooks\ValueObject\BoolVo;
-use EnterV\Voi\BoolVoInterface;
 
 class TextFormattingCombine implements TextFormattingCombineInterface
 {
@@ -24,39 +22,39 @@ class TextFormattingCombine implements TextFormattingCombineInterface
 
     protected bool $multilineQuoteBlock = false;
 
-    public function isBold(): BoolVoInterface
+    public function isBold(): bool
     {
-        return new BoolVo($this->bold);
+        return $this->bold;
     }
 
-    public function isItalic(): BoolVoInterface
+    public function isItalic(): bool
     {
-        return new BoolVo($this->italic);
+        return $this->italic;
     }
 
-    public function isUnderline(): BoolVoInterface
+    public function isUnderline(): bool
     {
-        return new BoolVo($this->underline);
+        return $this->underline;
     }
 
-    public function isStrikethrough(): BoolVoInterface
+    public function isStrikethrough(): bool
     {
-        return new BoolVo($this->strikethrough);
+        return $this->strikethrough;
     }
 
-    public function isListElement(): BoolVoInterface
+    public function isListElement(): bool
     {
-        return new BoolVo($this->listElement);
+        return $this->listElement;
     }
 
-    public function isQuoteBlock(): BoolVoInterface
+    public function isQuoteBlock(): bool
     {
-        return new BoolVo($this->quoteBlock);
+        return $this->quoteBlock;
     }
 
-    public function isMultilineQuoteBlock(): BoolVoInterface
+    public function isMultilineQuoteBlock(): bool
     {
-        return new BoolVo($this->multilineQuoteBlock);
+        return $this->multilineQuoteBlock;
     }
 
     public function withBold(): static

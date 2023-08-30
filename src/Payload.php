@@ -6,32 +6,30 @@ namespace EnterV\DiscordWebhooks;
 
 use EnterV\DiscordWebhooks\Interface\Embed\GetEmbedInterface;
 use EnterV\DiscordWebhooks\Interface\Payload\PayloadInterface;
-use EnterV\Voi\BoolVoInterface;
-use EnterV\Voi\StringVoInterface;
 
 class Payload implements PayloadInterface
 {
-    protected ?StringVoInterface $username = null;
-    protected ?StringVoInterface $avatarUrl = null;
-    protected ?StringVoInterface $message = null;
+    protected ?string $username = null;
+    protected ?string $avatarUrl = null;
+    protected ?string $message = null;
     protected ?GetEmbedInterface $embed = null;
-    protected ?BoolVoInterface $tts = null;
+    protected bool $tts = false;
 
-    public function setUsername(StringVoInterface $username): static
+    public function setUsername(string $username): static
     {
         $this->username = $username;
 
         return $this;
     }
 
-    public function setAvatarUrl(StringVoInterface $avatarUrl): static
+    public function setAvatarUrl(string $avatarUrl): static
     {
         $this->avatarUrl = $avatarUrl;
 
         return $this;
     }
 
-    public function setMessage(StringVoInterface $message): static
+    public function setMessage(string $message): static
     {
         $this->message = $message;
 
@@ -45,7 +43,7 @@ class Payload implements PayloadInterface
         return $this;
     }
 
-    public function setTts(BoolVoInterface $tts): static
+    public function setTts(bool $tts): static
     {
         $this->tts = $tts;
 
@@ -55,11 +53,11 @@ class Payload implements PayloadInterface
     public function toArray(): array
     {
         return [
-            'username' => $this->username?->value(),
-            'avatar_url' => $this->avatarUrl?->value(),
-            'content' => $this->message?->value(),
+            'username' => $this->username,
+            'avatar_url' => $this->avatarUrl,
+            'content' => $this->message,
             'embeds' => [$this->embed?->toArray()],
-            'tts' => $this->tts?->value() ?? false,
+            'tts' => $this->tts,
         ];
     }
 }

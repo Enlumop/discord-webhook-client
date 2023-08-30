@@ -6,7 +6,6 @@ namespace EnterV\DiscordWebhooks\Test;
 
 use EnterV\DiscordWebhooks\Builder\TextFormattingCombine;
 use EnterV\DiscordWebhooks\Builder\TextMessageBuilder;
-use EnterV\Voi\StringVoInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -20,23 +19,19 @@ use PHPUnit\Framework\TestCase;
 final class TextBuilderTest extends TestCase
 {
     private ?TextMessageBuilder $textMessageBuilder;
-    private ?StringVoInterface $textVo;
+    private string $text;
 
     protected function setUp(): void
     {
+        $faker = \Faker\Factory::create();
         $this->textMessageBuilder = new TextMessageBuilder(false);
-        $this->textVo = $this->createStub(StringVoInterface::class);
-        $this->textVo->method('value')
-            ->willReturn('Stub value')
-            ->willReturn('Another stub value')
-            ->willReturn('It is an intermediate value describing itself')
-        ;
+        $this->text = $faker->text();
     }
 
     protected function tearDown(): void
     {
         $this->textMessageBuilder = null;
-        $this->textVo = null;
+        $this->text = '';
     }
 
     /**
@@ -44,17 +39,19 @@ final class TextBuilderTest extends TestCase
      */
     public static function codeWithLang(): array
     {
+        $faker = \Faker\Factory::create();
+
         return [
             [
-                "<?php echo 'Some code in PHP ?>'",
+                "<?php echo '{$faker->text()}' ?>",
                 'php',
             ],
             [
-                '# This is markdown text',
+                "# {$faker->text()}",
                 'md',
             ],
             [
-                '<h1>And some HTML</h1>',
+                "<h1>{$faker->text()}</h1>",
                 'html',
             ],
         ];
@@ -62,116 +59,116 @@ final class TextBuilderTest extends TestCase
 
     public function testBuild(): void
     {
-        $message = $this->textMessageBuilder->addText($this->textVo)
+        $message = $this->textMessageBuilder?->addText($this->text)
             ->build()
         ;
-        self::assertSame($this->textVo->value(), $message->value());
+        self::assertSame($this->text, $message);
     }
 
     public function testAddText(): void
     {
-        $message = $this->textMessageBuilder->addText($this->textVo)
+        $message = $this->textMessageBuilder?->addText($this->text)
             ->build()
         ;
-        self::assertSame($this->textVo->value(), $message->value());
+        self::assertSame($this->text, $message);
     }
 
     public function testAddNewLine(): void
     {
         $textMessageBuilder = new TextMessageBuilder(true);
-        $message = $textMessageBuilder->addText($this->textVo)
+        $message = $textMessageBuilder->addText($this->text)
             ->build()
         ;
-        self::assertSame($this->textVo->value()."\n", $message->value());
+        self::assertSame($this->text."\n", $message);
     }
 
     public function testAddBold(): void
     {
-        $message = $this->textMessageBuilder->addBold($this->textVo)
+        $message = $this->textMessageBuilder?->addBold($this->text)
             ->build()
         ;
-        self::assertSame("**{$this->textVo->value()}**", $message->value());
+        self::assertSame("**{$this->text}**", $message);
     }
 
     public function testAddItalic(): void
     {
-        $message = $this->textMessageBuilder->addItalic($this->textVo)
+        $message = $this->textMessageBuilder?->addItalic($this->text)
             ->build()
         ;
-        self::assertSame("*{$this->textVo->value()}*", $message->value());
+        self::assertSame("*{$this->text}*", $message);
     }
 
     public function testAddUnderline(): void
     {
-        $message = $this->textMessageBuilder->addUnderline($this->textVo)
+        $message = $this->textMessageBuilder?->addUnderline($this->text)
             ->build()
         ;
-        self::assertSame("__{$this->textVo->value()}__", $message->value());
+        self::assertSame("__{$this->text}__", $message);
     }
 
     public function testAddStrikethrough(): void
     {
-        $message = $this->textMessageBuilder->addStrikethrough($this->textVo)
+        $message = $this->textMessageBuilder?->addStrikethrough($this->text)
             ->build()
         ;
-        self::assertSame("~~{$this->textVo->value()}~~", $message->value());
+        self::assertSame("~~{$this->text}~~", $message);
     }
 
     public function testAddList(): void
     {
-        $message = $this->textMessageBuilder->addList($this->textVo)
+        $message = $this->textMessageBuilder?->addList($this->text)
             ->build()
         ;
-        self::assertSame("- {$this->textVo->value()}", $message->value());
+        self::assertSame("- {$this->text}", $message);
     }
 
     public function testAddListWithIndentation(): void
     {
-        $message = $this->textMessageBuilder->addList($this->textVo, 1)
+        $message = $this->textMessageBuilder?->addList($this->text, 1)
             ->build()
         ;
-        self::assertSame("  - {$this->textVo->value()}", $message->value());
+        self::assertSame("  - {$this->text}", $message);
     }
 
     public function testAddCodeBlock(): void
     {
-        $message = $this->textMessageBuilder->addCodeBlock($this->textVo)
+        $message = $this->textMessageBuilder?->addCodeBlock($this->text)
             ->build()
         ;
-        self::assertSame("`{$this->textVo->value()}`", $message->value());
+        self::assertSame("`{$this->text}`", $message);
     }
 
     public function testAddMultilineCodeBlock(): void
     {
-        $message = $this->textMessageBuilder->addMultilineCodeBlock($this->textVo)
+        $message = $this->textMessageBuilder?->addMultilineCodeBlock($this->text)
             ->build()
         ;
-        self::assertSame("```\n{$this->textVo->value()}\n```", $message->value());
+        self::assertSame("```\n{$this->text}\n```", $message);
     }
 
     #[DataProvider('codeWithLang')]
     public function testAddMultilineCodeBlockWithLang(string $text, string $lang): void
     {
-        $message = $this->textMessageBuilder->addMultilineCodeBlock($text, $lang)
+        $message = $this->textMessageBuilder?->addMultilineCodeBlock($text, $lang)
             ->build()
         ;
-        self::assertSame("```{$lang}\n{$text}\n```", $message->value());
+        self::assertSame("```{$lang}\n{$text}\n```", $message);
     }
 
     public function testAddQuoteBlock(): void
     {
-        $message = $this->textMessageBuilder->addQuoteBlock($this->textVo)
+        $message = $this->textMessageBuilder?->addQuoteBlock($this->text)
             ->build()
         ;
-        self::assertSame("> {$this->textVo->value()}", $message->value());
+        self::assertSame("> {$this->text}", $message);
     }
 
     public function testAddMultilineQuoteBlock(): void
     {
-        $message = $this->textMessageBuilder->addMultilineQuoteBlock($this->textVo)
+        $message = $this->textMessageBuilder?->addMultilineQuoteBlock($this->text)
             ->build()
         ;
-        self::assertSame(">>> {$this->textVo->value()}", $message->value());
+        self::assertSame(">>> {$this->text}", $message);
     }
 
     public function testAddCombineTextFormatting(): void
@@ -182,9 +179,9 @@ final class TextBuilderTest extends TestCase
             ->withListElement()
             ->withQuoteBlock()
         ;
-        $message = $this->textMessageBuilder->addCombineTextFormatting($this->textVo, $combineFormat)
+        $message = $this->textMessageBuilder?->addCombineTextFormatting($this->text, $combineFormat)
             ->build()
         ;
-        self::assertSame("> - ***{$this->textVo->value()}***", $message->value());
+        self::assertSame("> - ***{$this->text}***", $message);
     }
 }
