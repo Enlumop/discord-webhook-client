@@ -18,7 +18,7 @@ Discord webhooks is a professional client for Discord's webhook API.
 
 ## Usage
 
-Example:
+Example
 
 ```php
 <?php
