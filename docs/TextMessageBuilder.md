@@ -36,9 +36,11 @@ multiline codeblock format
 
 - `addMultilineQuoteBlock` - Added text with
 
->>> multiline
-quote
-format
+> multiline
+
+> quote
+
+> format
 
 Be careful with the use. Discord for some reason can't always tell when you want to stop using a multiline quote block.
 
