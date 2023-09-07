@@ -36,13 +36,10 @@ $url = 'https://YOUR_WEBHOOKS_URL';
 $payload = new Payload();
 $payload->setUsername('Example Webhook Bot')
     ->setMessage('This is a message')
-    ->setEmbed($embed)
-;
+    ->setEmbed($embed);
 
 $webhook = new WebhookClient();
 $webhook->send($url, $payload);
-
-
 ```
 
 ## License
