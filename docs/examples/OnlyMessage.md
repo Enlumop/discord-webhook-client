@@ -1,4 +1,4 @@
-# Simple example
+# Only meesage without embeds
 
 ```php
 <?php
