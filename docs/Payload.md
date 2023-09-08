@@ -24,7 +24,7 @@ All setters implement the Fluent Interface pattern.
 
 ```php
 $payload = new Payload();
-$payload->setEmbed($embed) // @see Embed.md
+$payload->addEmbed($embed) // @see Embed.md
 ;
 ```
 
@@ -42,7 +42,7 @@ $payload->setAvatarUrl("Webhook Bot Avatar URL")
 ```php
 $payload = new Payload();
 $payload->setMessage("Some message")
-    ->setEmbed($embed) // @see Embed.md
+    ->addEmbed($embed) // @see Embed.md
 ;
 ```
 
@@ -54,6 +54,6 @@ $payload->setAvatarUrl("Webhook Bot Avatar URL")
     ->setUsername("Webhook Bot Name")
     ->setMessage("Some message")
     ->setTts(false) // or true.. if you want it
-    ->setEmbed($embed) // @see Embed.md
+    ->addEmbed($embed) // @see Embed.md
 ;
 ```

@@ -16,7 +16,7 @@ $url = 'DISCORD_WEBHOOK_URL'; // Put your discord webhook url
 $payload = new Payload();
 $payload->setUsername('Example Webhook Bot') // Change discord bot webhook username
     ->setMessage('This is a message') // Some text before embed
-    ->setEmbed($embed) // Set embed
+    ->addEmbed($embed) // Add embed
 ;
 
 // New discord webhook client
