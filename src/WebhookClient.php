@@ -13,10 +13,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class WebhookClient implements WebhookClientInterface
 {
-    /**
-     * @param array<string, mixed> $options Request options to apply to the given
-     *                                      request and to the transfer. See \GuzzleHttp\RequestOptions.
-     */
     public function send(string $url, GetPayloadInterface $payload, array $options = []): ResponseInterface
     {
         $payloadJson = json_encode($payload->toArray());

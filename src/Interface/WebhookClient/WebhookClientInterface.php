@@ -20,6 +20,8 @@ interface WebhookClientInterface
      * @see https://discord.com/developers/docs/resources/webhook#execute-webhook
      *
      * @param array<string, mixed> $options - see https://docs.guzzlephp.org/en/stable/request-options.html
+     *
+     * @throws \EnterV\DiscordWebhooks\Exception\Webhook\FailedSendHookException
      */
     public function send(string $url, GetPayloadInterface $payload, array $options = []): ResponseInterface;
 }
