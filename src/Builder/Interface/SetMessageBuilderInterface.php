@@ -4,10 +4,21 @@ declare(strict_types=1);
 
 namespace EnterV\DiscordWebhooks\Builder\Interface;
 
+/**
+ * All methods that add text, following Discord's formatting.
+ *
+ * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/TextMessageBuilder.md
+ */
 interface SetMessageBuilderInterface
 {
+    /**
+     * Adds text to the message, without formatting.
+     */
     public function addText(string $text): static;
 
+    /**
+     * Adds a new line.
+     */
     public function addNewLine(): static;
 
     /**

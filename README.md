@@ -12,7 +12,8 @@ Discord webhooks is a professional client for Discord's webhook API.
 
 ### Requirements
 
-- PHP >= 8.1
+- [PHP](https://www.php.net/) >= 8.1
+- [Composer](https://getcomposer.org/)
 
 ### Install via composer (not available yet)
 
@@ -45,8 +46,6 @@ $payload->setUsername('Example Webhook Bot') // Change discord bot webhook usern
 $webhook = new WebhookClient();
 // Send message
 $webhook->send($url, $payload);
-
-
 ```
 
 ## License
