@@ -14,7 +14,7 @@ interface SetPayloadInterface
 
     public function setMessage(string $message): static;
 
-    public function setEmbed(GetEmbedInterface $embed): static;
+    public function addEmbed(GetEmbedInterface $embed): static;
 
     public function setTts(bool $tts): static;
 }

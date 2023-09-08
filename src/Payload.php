@@ -12,7 +12,11 @@ class Payload implements PayloadInterface
     protected ?string $username = null;
     protected ?string $avatarUrl = null;
     protected ?string $message = null;
-    protected ?GetEmbedInterface $embed = null;
+
+    /**
+     * @var null|array<array<mixed>>
+     */
+    protected ?array $embeds = null;
     protected bool $tts = false;
 
     public function setUsername(string $username): static
@@ -36,9 +40,12 @@ class Payload implements PayloadInterface
         return $this;
     }
 
-    public function setEmbed(GetEmbedInterface $embed): static
+    public function addEmbed(GetEmbedInterface $embed): static
     {
-        $this->embed = $embed;
+        if (null === $this->embeds) {
+            $this->embeds = [];
+        }
+        $this->embeds[] = $embed->toArray();
 
         return $this;
     }
@@ -56,7 +63,7 @@ class Payload implements PayloadInterface
             'username' => $this->username,
             'avatar_url' => $this->avatarUrl,
             'content' => $this->message,
-            'embeds' => [$this->embed?->toArray()],
+            'embeds' => $this->embeds,
             'tts' => $this->tts,
         ];
     }
