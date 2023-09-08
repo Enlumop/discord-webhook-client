@@ -1,20 +1,34 @@
 # Discord Webhook Client
 
-[![Latest Stable Version](http://poser.pugx.org/enterv/discord-webhooks/v)](https://packagist.org/packages/enterv/discord-webhooks) [![Total Downloads](http://poser.pugx.org/enterv/discord-webhooks/downloads)](https://packagist.org/packages/enterv/discord-webhooks) [![Latest Unstable Version](http://poser.pugx.org/enterv/discord-webhooks/v/unstable)](https://packagist.org/packages/enterv/discord-webhooks) [![License](http://poser.pugx.org/enterv/discord-webhooks/license)](https://packagist.org/packages/enterv/discord-webhooks) [![PHP Version Require](http://poser.pugx.org/enterv/discord-webhooks/require/php)](https://packagist.org/packages/enterv/discord-webhooks)
+## Badges
 
-![Source Code](https://img.shields.io/badge/enterv%2Fdiscord-webhooks?label=source&link=https%3A%2F%2Fgithub.com%2FEnterVPL%2Fdiscord-webhooks%2Fblob%2Fmaster%2Fcomposer.json) ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/entervpl/discord-webhooks) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/EnterVPL/discord-webhooks)
+### Source Code
+
+[![Documentation](https://badgen.net/static/link/documentation?icon=github&color=blue)](./docs/)
+
+![Source Code](https://img.shields.io/badge/enterv%2Fdiscord-webhooks?label=source&link=https%3A%2F%2Fgithub.com%2FEnterVPL%2Fdiscord-webhooks%2Fblob%2Fmaster%2Fcomposer.json&logo=github) ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/entervpl/discord-webhooks?logo=github) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/EnterVPL/discord-webhooks?logo=github)
+
+[![Total Downloads](https://badgen.net/packagist/dt/enterv/discord-webhooks?icon=github)](https://packagist.org/packages/enterv/discord-webhooks) [![License](https://badgen.net/github/license/entervpl/discord-webhooks?icon=github)](https://packagist.org/packages/enterv/discord-webhooks) [![PHP Version Require](https://badgen.net/packagist/php/enterv/discord-webhooks?color=purple&icon)](https://packagist.org/packages/enterv/discord-webhooks)
+
+### Latest Version
+
+[![Latest Stable Version](https://badgen.net/github/release/entervpl/discord-webhooks/stable?icon=php&label=stable)](https://packagist.org/packages/enterv/discord-webhooks) [![Latest Unstable Version](https://badgen.net/packagist/v/enterv/discord-webhooks/pre?icon=php&label=unstable&color=orange)](https://packagist.org/packages/enterv/discord-webhooks)
+
+### Actions
 
 ![Static analysis](https://github.com/EnterVPL/discord-webhooks/workflows/Static%20analysis/badge.svg)
-
-The professional Discord Webhook Client.
 
 ## Table of Contents
 
 - [Discord Webhook Client](#discord-webhook-client)
+  - [Badges](#badges)
+    - [Source Code](#source-code)
+    - [Latest Version](#latest-version)
+    - [Actions](#actions)
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-    - [Install via composer (not available yet)](#install-via-composer-not-available-yet)
+    - [Install via composer](#install-via-composer)
   - [Simple Example](#simple-example)
   - [License](#license)
   - [Contributing](#contributing)
@@ -30,9 +44,11 @@ The professional Discord Webhook Client.
 - [PHP](https://www.php.net/) >= 8.1
 - [Composer](https://getcomposer.org/)
 
-### Install via composer (not available yet)
+### Install via composer
 
-`composer require enterv/discord-webhooks`
+```shell
+composer require enterv/discord-webhooks
+```
 
 ## Simple Example
 
