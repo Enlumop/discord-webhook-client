@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Exception\Interface;
+namespace Enlumop\DiscordWebhooks\Exception\Interface;
 
-interface ColorThrowableInterface extends \Throwable
-{
-}
+interface ColorThrowableInterface extends \Throwable {}

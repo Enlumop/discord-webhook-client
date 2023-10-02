@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Test;
+namespace Enlumop\DiscordWebhooks\Test;
 
-use EnterV\DiscordWebhooks\Color;
-use EnterV\DiscordWebhooks\Exception\Color\ColorException;
-use EnterV\DiscordWebhooks\Helper\ColorHelper;
+use Enlumop\DiscordWebhooks\Color;
+use Enlumop\DiscordWebhooks\Exception\Color\ColorException;
+use Enlumop\DiscordWebhooks\Helper\ColorHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class TextMessageBuilderTest.
  *
- * @covers \EnterV\DiscordWebhooks\Embed
+ * @covers \Enlumop\DiscordWebhooks\Embed
  *
  * @internal
  */

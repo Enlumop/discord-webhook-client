@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Interface\Embed;
+namespace Enlumop\DiscordWebhooks\Interface\Embed;
 
 /**
  * Data that Embed should return.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/Embed.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/Embed.md
  */
 interface GetEmbedInterface
 {

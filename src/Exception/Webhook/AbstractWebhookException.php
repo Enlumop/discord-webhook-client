@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Exception\Webhook;
+namespace Enlumop\DiscordWebhooks\Exception\Webhook;
 
-use EnterV\DiscordWebhooks\Exception\Interface\WebhookThrowableInterface;
+use Enlumop\DiscordWebhooks\Exception\Interface\WebhookThrowableInterface;
 
-abstract class AbstractWebhookException extends \Exception implements WebhookThrowableInterface
-{
-}
+abstract class AbstractWebhookException extends \Exception implements WebhookThrowableInterface {}

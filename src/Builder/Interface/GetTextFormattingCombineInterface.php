@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Builder\Interface;
+namespace Enlumop\DiscordWebhooks\Builder\Interface;
 
 /**
  * All public methods that can be used to check whether a given format has been used.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/TextFormattingCombine.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/TextFormattingCombine.md
  */
 interface GetTextFormattingCombineInterface
 {

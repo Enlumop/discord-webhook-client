@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Builder\Interface;
+namespace Enlumop\DiscordWebhooks\Builder\Interface;
 
 /**
  * All methods that add text, following Discord's formatting.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/TextMessageBuilder.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/TextMessageBuilder.md
  */
 interface SetMessageBuilderInterface
 {

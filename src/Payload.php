@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks;
+namespace Enlumop\DiscordWebhooks;
 
-use EnterV\DiscordWebhooks\Interface\Embed\GetEmbedInterface;
-use EnterV\DiscordWebhooks\Interface\Payload\PayloadInterface;
+use Enlumop\DiscordWebhooks\Interface\Embed\GetEmbedInterface;
+use Enlumop\DiscordWebhooks\Interface\Payload\PayloadInterface;
 
 class Payload implements PayloadInterface
 {

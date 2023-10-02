@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Exception\Color;
+namespace Enlumop\DiscordWebhooks\Exception\Color;
 
-class ColorException extends AbstractColorException
-{
-}
+class ColorException extends AbstractColorException {}

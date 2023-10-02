@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks;
+namespace Enlumop\DiscordWebhooks;
 
-use EnterV\DiscordWebhooks\Exception\Webhook\FailedSendHookException;
-use EnterV\DiscordWebhooks\Exception\Webhook\InvalidPayloadException;
-use EnterV\DiscordWebhooks\Interface\Payload\GetPayloadInterface;
-use EnterV\DiscordWebhooks\Interface\WebhookClient\WebhookClientInterface;
+use Enlumop\DiscordWebhooks\Exception\Webhook\FailedSendHookException;
+use Enlumop\DiscordWebhooks\Exception\Webhook\InvalidPayloadException;
+use Enlumop\DiscordWebhooks\Interface\Payload\GetPayloadInterface;
+use Enlumop\DiscordWebhooks\Interface\WebhookClient\WebhookClientInterface;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
 

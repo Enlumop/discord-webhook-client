@@ -6,17 +6,17 @@
 
 [![Documentation](https://badgen.net/static/link/documentation?icon=github&color=blue)](./docs/)
 
-![Source Code](https://img.shields.io/badge/enterv%2Fdiscord-webhooks?label=source&link=https%3A%2F%2Fgithub.com%2FEnterVPL%2Fdiscord-webhooks%2Fblob%2Fmaster%2Fcomposer.json&logo=github) ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/entervpl/discord-webhooks?logo=github) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/EnterVPL/discord-webhooks?logo=github)
+ ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/enlumop/discord-webhook-client?logo=github) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/enlumop/discord-webhook-client?logo=github)
 
-[![Total Downloads](https://badgen.net/packagist/dt/enterv/discord-webhooks?icon=github)](https://packagist.org/packages/enterv/discord-webhooks) [![License](https://badgen.net/github/license/entervpl/discord-webhooks?icon=github)](https://packagist.org/packages/enterv/discord-webhooks) [![PHP Version Require](https://badgen.net/packagist/php/enterv/discord-webhooks?color=purple&icon)](https://packagist.org/packages/enterv/discord-webhooks)
+[![Total Downloads](https://badgen.net/packagist/dt/Enlumop/discord-webhook-client?icon=github)](https://packagist.org/packages/Enlumop/discord-webhook-client) [![License](https://badgen.net/github/license/enlumop/discord-webhook-client?icon=github)](https://packagist.org/packages/Enlumop/discord-webhook-client) [![PHP Version Require](https://badgen.net/packagist/php/enlumop/discord-webhook-client?color=purple&icon)](https://packagist.org/packages/Enlumop/discord-webhook-client)
 
 ### Latest Version
 
-[![Latest Stable Version](https://badgen.net/github/release/entervpl/discord-webhooks/stable?icon=php&label=stable)](https://packagist.org/packages/enterv/discord-webhooks) [![Latest Unstable Version](https://badgen.net/packagist/v/enterv/discord-webhooks/pre?icon=php&label=unstable&color=orange)](https://packagist.org/packages/enterv/discord-webhooks)
+[![Latest Stable Version](https://badgen.net/github/release/enlumop/discord-webhook-client/stable?icon=php&label=stable)](https://packagist.org/packages/enlumop/discord-webhook-client) [![Latest Unstable Version](https://badgen.net/packagist/v/Enlumop/discord-webhook-client/pre?icon=php&label=unstable&color=orange)](https://packagist.org/packages/Enlumop/discord-webhook-client)
 
 ### Actions
 
-![Static analysis](https://github.com/EnterVPL/discord-webhooks/workflows/Static%20analysis/badge.svg)
+![Static analysis](https://github.com/enlumop/discord-webhook-client/workflows/Static%20analysis/badge.svg)
 
 ## Table of Contents
 
@@ -47,16 +47,16 @@
 ### Install via composer
 
 ```shell
-composer require enterv/discord-webhooks
+composer require enlumop/discord-webhook-client
 ```
 
 ## Simple Example
 
 ```php
 <?php
-use EnterV\DiscordWebhooks\Embed;
-use EnterV\DiscordWebhooks\Payload;
-use EnterV\DiscordWebhooks\WebhookClient;
+use Enlumop\DiscordWebhooks\Embed;
+use Enlumop\DiscordWebhooks\Payload;
+use Enlumop\DiscordWebhooks\WebhookClient;
 
 // Create embed
 $embed = new Embed();
@@ -91,8 +91,8 @@ Pull requests and issues are open!
 
 ```php
 <?php
-use EnterV\DiscordWebhooks\Payload;
-use EnterV\DiscordWebhooks\WebhookClient;
+use Enlumop\DiscordWebhooks\Payload;
+use Enlumop\DiscordWebhooks\WebhookClient;
 
 $url = 'DISCORD_WEBHOOK_URL'; // Put your discord webhook url
 
@@ -110,10 +110,10 @@ $webhook->send($url, $payload);
 
 ```php
 <?php
-use EnterV\DiscordWebhooks\Builder\TextFormattingCombine;
-use EnterV\DiscordWebhooks\Builder\TextMessageBuilder;
-use EnterV\DiscordWebhooks\Payload;
-use EnterV\DiscordWebhooks\WebhookClient;
+use Enlumop\DiscordWebhooks\Builder\TextFormattingCombine;
+use Enlumop\DiscordWebhooks\Builder\TextMessageBuilder;
+use Enlumop\DiscordWebhooks\Payload;
+use Enlumop\DiscordWebhooks\WebhookClient;
 
 $url = 'DISCORD_WEBHOOK_URL'; // Put your discord webhook url
 

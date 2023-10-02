@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Builder;
+namespace Enlumop\DiscordWebhooks\Builder;
 
-use EnterV\DiscordWebhooks\Builder\Interface\TextFormattingCombineInterface;
+use Enlumop\DiscordWebhooks\Builder\Interface\TextFormattingCombineInterface;
 
 class TextFormattingCombine implements TextFormattingCombineInterface
 {

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Test;
+namespace Enlumop\DiscordWebhooks\Test;
 
-use EnterV\DiscordWebhooks\Builder\TextFormattingCombine;
-use EnterV\DiscordWebhooks\Builder\TextMessageBuilder;
+use Enlumop\DiscordWebhooks\Builder\TextFormattingCombine;
+use Enlumop\DiscordWebhooks\Builder\TextMessageBuilder;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class TextMessageBuilderTest.
  *
- * @covers \EnterV\DiscordWebhooks\Builder\TextMessageBuilder
+ * @covers \Enlumop\DiscordWebhooks\Builder\TextMessageBuilder
  *
  * @internal
  */

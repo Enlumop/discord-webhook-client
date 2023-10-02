@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Helper;
+namespace Enlumop\DiscordWebhooks\Helper;
 
-use EnterV\DiscordWebhooks\Exception\Color\ColorException;
+use Enlumop\DiscordWebhooks\Exception\Color\ColorException;
 
 /**
  * Helps with the Color class.

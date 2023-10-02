@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks;
+namespace Enlumop\DiscordWebhooks;
 
-use EnterV\DiscordWebhooks\Interface\Color\ColorInterface;
-use EnterV\DiscordWebhooks\Interface\Embed\EmbedInterface;
+use Enlumop\DiscordWebhooks\Interface\Color\ColorInterface;
+use Enlumop\DiscordWebhooks\Interface\Embed\EmbedInterface;
 
 class Embed implements EmbedInterface
 {

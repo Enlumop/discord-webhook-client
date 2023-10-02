@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks;
+namespace Enlumop\DiscordWebhooks;
 
-use EnterV\DiscordWebhooks\Helper\ColorHelper;
-use EnterV\DiscordWebhooks\Interface\Color\ColorInterface;
+use Enlumop\DiscordWebhooks\Helper\ColorHelper;
+use Enlumop\DiscordWebhooks\Interface\Color\ColorInterface;
 
 class Color implements ColorInterface
 {

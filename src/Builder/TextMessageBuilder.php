@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Builder;
+namespace Enlumop\DiscordWebhooks\Builder;
 
-use EnterV\DiscordWebhooks\Builder\Interface\GetTextFormattingCombineInterface;
-use EnterV\DiscordWebhooks\Builder\Interface\MessageBuilderInterface;
+use Enlumop\DiscordWebhooks\Builder\Interface\GetTextFormattingCombineInterface;
+use Enlumop\DiscordWebhooks\Builder\Interface\MessageBuilderInterface;
 
 class TextMessageBuilder implements MessageBuilderInterface
 {
@@ -26,8 +26,7 @@ class TextMessageBuilder implements MessageBuilderInterface
 
     public function __construct(
         protected bool $autoNewLine = true
-    ) {
-    }
+    ) {}
 
     public function build(): string
     {

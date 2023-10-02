@@ -2,9 +2,9 @@
 
 ```php
 <?php
-use EnterV\DiscordWebhooks\Embed;
-use EnterV\DiscordWebhooks\Payload;
-use EnterV\DiscordWebhooks\WebhookClient;
+use Enlumop\DiscordWebhooks\Embed;
+use Enlumop\DiscordWebhooks\Payload;
+use Enlumop\DiscordWebhooks\WebhookClient;
 
 // Create embed
 $embed = new Embed();

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Interface\Color;
+namespace Enlumop\DiscordWebhooks\Interface\Color;
 
 /**
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/Color.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/Color.md
  */
 interface ColorInterface
 {

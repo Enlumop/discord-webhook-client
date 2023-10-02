@@ -2,8 +2,8 @@
 
 ```php
 <?php
-use EnterV\DiscordWebhooks\Payload;
-use EnterV\DiscordWebhooks\WebhookClient;
+use Enlumop\DiscordWebhooks\Payload;
+use Enlumop\DiscordWebhooks\WebhookClient;
 
 $url = 'DISCORD_WEBHOOK_URL'; // Put your discord webhook url
 

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Interface\Embed;
+namespace Enlumop\DiscordWebhooks\Interface\Embed;
 
-use EnterV\DiscordWebhooks\Interface\Color\ColorInterface;
+use Enlumop\DiscordWebhooks\Interface\Color\ColorInterface;
 
 /**
  * Interface for public setters for the Embed class.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/Embed.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/Embed.md
  */
 interface SetEmbedInterface
 {

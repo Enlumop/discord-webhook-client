@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Interface\Payload;
+namespace Enlumop\DiscordWebhooks\Interface\Payload;
 
 /**
  * A full-fledged interface for the Payload class.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/Payload.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/Payload.md
  */
-interface PayloadInterface extends GetPayloadInterface, SetPayloadInterface
-{
-}
+interface PayloadInterface extends GetPayloadInterface, SetPayloadInterface {}

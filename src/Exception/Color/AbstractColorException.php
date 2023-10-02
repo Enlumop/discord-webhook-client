@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Exception\Color;
+namespace Enlumop\DiscordWebhooks\Exception\Color;
 
-use EnterV\DiscordWebhooks\Exception\Interface\WebhookThrowableInterface;
+use Enlumop\DiscordWebhooks\Exception\Interface\WebhookThrowableInterface;
 
-abstract class AbstractColorException extends \Exception implements WebhookThrowableInterface
-{
-}
+abstract class AbstractColorException extends \Exception implements WebhookThrowableInterface {}

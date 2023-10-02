@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EnterV\DiscordWebhooks\Interface\Payload;
+namespace Enlumop\DiscordWebhooks\Interface\Payload;
 
 /**
  * Data that Payload should return.
  *
- * @see https://github.com/EnterVPL/discord-webhooks/blob/master/docs/Payload.md
+ * @see https://github.com/Enlumop/discord-webhook-client/blob/master/docs/Payload.md
  */
 interface GetPayloadInterface
 {

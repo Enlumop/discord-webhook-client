@@ -1,5 +1,5 @@
 {
-    "name": "enterv/discord-webhooks",
+    "name": "enlumop/discord-webhook-client",
     "description": "Professional Discord webhook client library.",
     "type": "library",
     "license": "MIT",
@@ -8,6 +8,7 @@
         "webhook",
         "enterv",
         "entervpl",
+        "Enlumop",
         "client"
     ],
     "authors": [
@@ -23,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "EnterV\\DiscordWebhooks\\": "src/"
+            "Enlumop\\DiscordWebhooks\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EnterV\\DiscordWebhooks\\Test\\": "tests/"
+            "Enlumop\\DiscordWebhooks\\Test\\": "tests/"
         }
     },
     "require-dev": {
