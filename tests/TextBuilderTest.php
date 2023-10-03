@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class TextBuilderTest extends TestCase
 {
-    private ?TextMessageBuilder $textMessageBuilder;
+    private null|TextMessageBuilder $textMessageBuilder;
     private string $text;
 
     protected function setUp(): void

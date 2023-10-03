@@ -6,7 +6,7 @@
 
 [![Documentation](https://badgen.net/static/link/documentation?icon=github&color=blue)](./docs/)
 
- ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/enlumop/discord-webhook-client?logo=github) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/enlumop/discord-webhook-client?logo=github)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/enlumop/discord-webhook-client?logo=github) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/enlumop/discord-webhook-client?logo=github)
 
 [![Total Downloads](https://badgen.net/packagist/dt/Enlumop/discord-webhook-client?icon=github)](https://packagist.org/packages/Enlumop/discord-webhook-client) [![License](https://badgen.net/github/license/enlumop/discord-webhook-client?icon=github)](https://packagist.org/packages/Enlumop/discord-webhook-client) [![PHP Version Require](https://badgen.net/packagist/php/enlumop/discord-webhook-client?color=purple&icon)](https://packagist.org/packages/Enlumop/discord-webhook-client)
 

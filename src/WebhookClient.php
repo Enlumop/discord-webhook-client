@@ -25,7 +25,7 @@ class WebhookClient implements WebhookClientInterface
             'POST',
             $url,
             [
-                'Content-Type' => 'application/json',
+                'content-type' => 'application/json',
             ],
             $payloadJson
         );
@@ -35,7 +35,7 @@ class WebhookClient implements WebhookClientInterface
         $code = $response->getStatusCode();
         $content = $response->getBody()->getContents();
 
-        if (204 !== $code) {
+        if (200 > $code || 300 <= $code) {
             throw new FailedSendHookException($code.':'.$content);
         }
 

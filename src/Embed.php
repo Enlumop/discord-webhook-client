@@ -9,11 +9,11 @@ use Enlumop\DiscordWebhooks\Interface\Embed\EmbedInterface;
 
 class Embed implements EmbedInterface
 {
-    protected ?string $title = null;
-    protected ?string $titleUrl = null;
-    protected ?string $description = null;
-    protected ?\DateTimeInterface $timestamp = null;
-    protected ?ColorInterface $color = null;
+    protected null|string $title = null;
+    protected null|string $titleUrl = null;
+    protected null|string $description = null;
+    protected null|\DateTimeInterface $timestamp = null;
+    protected null|ColorInterface $color = null;
 
     /**
      * @var array<string, null|string>

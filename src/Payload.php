@@ -9,14 +9,14 @@ use Enlumop\DiscordWebhooks\Interface\Payload\PayloadInterface;
 
 class Payload implements PayloadInterface
 {
-    protected ?string $username = null;
-    protected ?string $avatarUrl = null;
-    protected ?string $message = null;
+    protected null|string $username = null;
+    protected null|string $avatarUrl = null;
+    protected null|string $message = null;
 
     /**
      * @var null|array<array<mixed>>
      */
-    protected ?array $embeds = null;
+    protected null|array $embeds = null;
     protected bool $tts = false;
 
     public function setUsername(string $username): static
